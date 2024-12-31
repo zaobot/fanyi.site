@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="领先的AI文档翻译平台，集成Open AI、Claude、Gemini等翻译大语言模型，支持PDF及链接翻译，覆盖中英法德日韩俄西意9大语种。提供双语对照、企业级安全保障，让翻译更智能、更精准。立即体验智能翻译新境界！">
+    <title>新一代AI智能文档翻译平台 | 多模型PDF翻译专家</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" preload>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" preload>
+    <style>
+        /* 保持原有样式不变 */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #4c6ef5, #9f7aea);
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition-base: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary-gradient);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* 保持原有动画和其他样式... */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .slide-in {
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* 保持其他原有样式... */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: var(--transition-base);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #9f7aea;
+            transition: var(--transition-base);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 1rem;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-base);
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .language-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.75rem;
+            transition: var(--transition-base);
+        }
+
+        .language-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .menu-active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(17, 24, 39, 0.95);
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="sticky-nav" role="banner">
+        <nav class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center" aria-label="主页">
+                    <img src="https://ceyanai.com/fanyi/logo126.png" alt="AI文档翻译平台 Logo" class="w-12 h-12" style="width: 50px; height: 50px;" />
+                </a>
+
+                <div class="hidden md:flex items-center space-x-6" role="navigation">
+                    <a href="#features" class="nav-link">产品功能</a>
+                    <a href="#solutions" class="nav-link">解决方案</a>
+                    <a href="#pricing" class="nav-link">定价方案</a>
+                    <a href="#help" class="nav-link">帮助中心</a>
+                    <a href="#about" class="nav-link">关于我们</a>
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full transition-colors duration-300">
+                        立即体验
+                    </button>
+                </div>
+
+                <button class="md:hidden text-2xl" aria-label="展开菜单">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主体内容 -->
+    <main role="main">
+        <!-- Hero 区域 -->
+        <section class="relative min-h-screen flex items-center justify-center px-4 py-20">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    新一代AI智能文档翻译平台
+                </h1>
+                <p class="text-xl md:text-2xl mb-10 opacity-90">
+                    集成OpenAI、Claude和Gemini等顶级翻译模型，支持9种语言高效翻译
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <button class="bg-white text-purple-600 px-8 py-3 rounded-full font-medium hover:bg-purple-50 transition-colors duration-300">
+                        免费试用
+                    </button>
+                    <button class="bg-purple-600 text-white px-8 py-3 rounded-full font-medium hover:bg-purple-700 transition-colors duration-300">
+                        了解更多
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技术特色 -->
+        <section id="features" class="py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">技术特色</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 多模型支持 -->
+                    <div class="feature-card p-6 slide-in" style="animation-delay: 0.2s">
+                        <i class="fas fa-robot text-4xl text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">多模型支持</h3>
+                        <p class="text-gray-600">集成 OpenAI、Claude 和 Gemini 顶级模型，提供多样化翻译选择</p>
+                    </div>
+                    <!-- 多语言翻译 -->
+                    <div class="feature-card p-6 slide-in" style="animation-delay: 0.3s">
+                        <i class="fas fa-language text-4xl text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">多语言翻译</h3>
+                        <p class="text-gray-600">支持中、英、法、德、日、韩、俄、西、意 9 种语言，覆盖全球主要市场</p>
+                    </div>
+                    <!-- 双语对照 -->
+                    <div class="feature-card p-6 slide-in" style="animation-delay: 0.4s">
+                        <i class="fas fa-columns text-4xl text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">双语对照</h3>
+                        <p class="text-gray-600">提供译文与原文的双语对照，便于校对和学习</p>
+                    </div>
+                    <!-- 支持大文档 -->
+                    <div class="feature-card p-6 slide-in" style="animation-delay: 0.5s">
+                        <i class="fas fa-file-pdf text-4xl text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">支持大文档</h3>
+                        <p class="text-gray-600">让您轻松翻译大型PDF文档</p>
+                    </div>
+                    <!-- 原版排版保留 -->
+                    <div class="feature-card p-6 slide-in" style="animation-delay: 0.6s">
+                        <i class="fas fa-copy text-4xl text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">原版排版保留</h3>
+                        <p class="text-gray-600">智能识别并完美还原原文格式、图表与样式</p>
+                    </div>
+                    <!-- 企业级安全 -->
+                    <div class="feature-card p-6 slide-in" style="animation-delay: 0.7s">
+                        <i class="fas fa-shield-alt text-4xl text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">企业级安全</h3>
+                        <p class="text-gray-600">全程加密保护，确保数据安全</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 工作流程 -->
+        <section id="workflow" class="py-20 px-4 bg-gray-900 bg-opacity-50">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">简单高效的工作流程</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- 文档上传 -->
+                    <div class="text-center fade-in" style="animation-delay: 0.3s">
+                        <div class="w-16 h-16 mx-auto bg-purple-600 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-upload text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">文档上传</h3>
+                        <p class="opacity-75">支持拖拽上传和链接解析</p>
+                    </div>
+                    
+                    <!-- 翻译设置 -->
+                    <div class="text-center fade-in" style="animation-delay: 0.4s">
+                        <div class="w-16 h-16 mx-auto bg-purple-600 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-cog text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">翻译设置</h3>
+                        <p class="opacity-75">选择语言和翻译模型</p>
+                    </div>
+                    
+                    <!-- 智能翻译 -->
+                    <div class="text-center fade-in" style="animation-delay: 0.5s">
+                        <div class="w-16 h-16 mx-auto bg-purple-600 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-language text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">智能翻译</h3>
+                        <p class="opacity-75">AI实时翻译，进度实时显示</p>
+                    </div>
+
+                    <!-- 成果导出 -->
+                    <div class="text-center fade-in" style="animation-delay: 0.6s">
+                        <div class="w-16 h-16 mx-auto bg-purple-600 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-file-export text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">成果导出</h3>
+                        <p class="opacity-75">支持PDF和双语对照文档导出</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">关于我们</h3>
+                    <p class="opacity-75">专注于提供智能、高效的文档翻译解决方案</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">产品</h3>
+                    <ul class="space-y-2 opacity-75">
+                        <li>PDF翻译</li>
+                        <li>链接翻译</li>
+                        <li>文档翻译</li>
+                        <li>格式转换</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">资源</h3>
+                    <ul class="space-y-2 opacity-75">
+                        <li>帮助中心</li>
+                        <li>博客</li>
+                        <li>API文档</li>
+                        <li>下载中心</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">联系我们</h3>
+                    <ul class="space-y-2 opacity-75">
+                        <li>客户服务</li>
+                        <li>商务合作</li>
+                        <li>技术支持</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="opacity-75">&copy; 2024 AI智能文档翻译平台. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
